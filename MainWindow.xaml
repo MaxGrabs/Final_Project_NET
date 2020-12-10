@@ -6,7 +6,34 @@
         xmlns:local="clr-namespace:Final_Project_NET"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+    <DockPanel Margin="10">
+        <StackPanel DockPanel.Dock="Right" Margin="10, 0">
+            <StackPanel.Resources>
+                <Style TargetType="Button">
+                    <Setter Property="Margin" Value="0,0,0,5"/>
+                </Style>
+            </StackPanel.Resources>
+            <TextBlock FontWeight="Bold" Margin="0,0,0,10">ListBox Selection</TextBlock>
+            <Button Name="btnShowSelectedItem" Click="btnShowSelectedItem_Click">Show selected</Button>
+            <Button Name="btnSelectLast" Click="btnSelectLast_Click">Select Last</Button>
+            <Button Name="btnSelectNext" Click="btnSelectNext_Click">Select Next</Button>
+            <Button Name="btnSelectCSharp" Click="btnSelectCSharp_Click">Select C#</Button>
+            <Button Name="btnSelectAll" Click="btnSelectAll_Click">Select All</Button>
+            <Button Name="btnExample" Click="btnExample_Click">Example</Button>
+        </StackPanel>
+        <ListBox x:Name="lbTodoList" HorizontalContentAlignment="Stretch" SelectionMode="Multiple" SelectionChanged="lbTodoList_SelectionChanged">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="0,2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="{Binding Title}"/>
+                        <ProgressBar Grid.Column="1" Minimum="0" Maximum="100" Value="{Binding Completion}"/>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </DockPanel>
 </Window>
