@@ -23,6 +23,8 @@ namespace Final_Project_NET
         public MainWindow()
         {
             InitializeComponent();
+
+            test
         }
     }
 }
