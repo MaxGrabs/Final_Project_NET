@@ -20,11 +20,24 @@ namespace Final_Project_NET
     /// </summary>
     public partial class MainWindow : Window
     {
+
+
         public MainWindow()
         {
             InitializeComponent();
 
-            test
+            
+        }
+
+        private void btnShowSelectedItem_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }
+
