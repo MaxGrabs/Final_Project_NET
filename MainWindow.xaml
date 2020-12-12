@@ -7,9 +7,8 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <WrapPanel>
-
-        <ListBox Margin="10,0,10,20" Width="643" Height="417">
-            <TextBox TextWrapping="Wrap" Text="TextBox" Width="220" Margin="0,123,0,208" TextChanged="TextBox_TextChanged"/>
+        <ListBox Name ="listbox"  Margin="10,0,10,20" Width="643" Height="417">
+            
         </ListBox>
         <StackPanel Margin="10, 0" Width="108" Height="160">
             <StackPanel.Resources>
