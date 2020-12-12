@@ -15,35 +15,23 @@ using System.Windows.Shapes;
 namespace Final_Project_NET
 {
     /// <summary>
-    /// Interaction logic for AddWindow.xaml
+    /// Interaction logic for edit.xaml
     /// </summary>
-    public partial class AddWindow : Window
+    public partial class edit : Window
     {
-        
-        public AddWindow()
+        public edit()
         {
             InitializeComponent();
         }
-        private void AddBinding_Click(object sender, RoutedEventArgs e)
+
+        private void EditBinding_Click(object sender, RoutedEventArgs e)
         {
-            String Name;
-            int age;
-            String PhoneNumber;
-            
 
-            Name = addName.Text;
-            PhoneNumber = addPhoneNumber.Text;
-            age = int.Parse(addAge.Text);
-            ContactManager.newContact(Name, age, PhoneNumber);
-
-            this.Close();
         }
 
         private void CancelBinding_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+
         }
-        //TEXT BOXES
-        
     }
 }

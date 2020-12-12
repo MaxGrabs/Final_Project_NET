@@ -37,14 +37,9 @@
         <ListBox x:Name="ContactList" HorizontalAlignment="Stretch" SelectionMode="Single" >
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <!--<Grid Margin="0,2">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                                
-                            <ColumnDefinition Width="100"/>
-                        </Grid.ColumnDefinitions>
-                        <TextBlock Text="{Binding Title}"/>
-                    </Grid>-->
+                    <WrapPanel>
+                        <TextBlock Text="{Binding Name}" FontWeight="Bold"/>
+                    </WrapPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
             

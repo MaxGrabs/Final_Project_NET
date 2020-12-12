@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Final_Project_NET
 {
-    class ContactManager
+     sealed class ContactManager
     {
-        public void newContact(string name, int age, string number)
+        public static void  newContact(string name, int age, string number)
         {
             var con = new SqlConnection(@"data source=localhost\SQLEXPRESS;database = Contacts;Trusted_Connection=True");
             SqlCommand cm = new SqlCommand("INSERT INTO Contacts" +
@@ -34,18 +34,18 @@ namespace Final_Project_NET
 
 
 
-        public List<Contact> ReadContacts(Contact contact)
+        static public List<Contact> ReadContacts()
         {
             List<Contact> contacts = new List<Contact>();
-            using (var con = new SqlConnection((@"data=localhost\SQLEXPRESS;database=Sales;Trusted_Connection=True")))
+            using (var con = new SqlConnection((@"data source=localhost\SQLEXPRESS;database = Contacts;Trusted_Connection=True")))
             {
-                using (var cm = new SqlCommand("Select * from Contacts", con))
+                using (var cm = new SqlCommand("SELECT * FROM Contacts", con))
                 {
                     con.Open();
 
                     using (var sdr = cm.ExecuteReader())
                     {
-                        while (sdr.HasRows)
+                        while (sdr.Read())
                         {
                             object Name = sdr["Name"];
                             object Age = sdr["Age"];
@@ -53,6 +53,7 @@ namespace Final_Project_NET
 
                             contacts.Add(new Contact((String)Name, (int)Age, (string)Number));
                         }
+                        sdr.Close();
                     }
                 }
             }
@@ -71,7 +72,7 @@ namespace Final_Project_NET
 
         public void deleteContact(string name)
         {
-            var con = new SqlConnection(@"data source=localhost\SQLEXPRESS;database = CONTACTS;Trusted_Connection=True");
+            var con = new SqlConnection(@"data source=localhost\SQLEXPRESS;database = Contacts;Trusted_Connection=True");
 
             SqlCommand cm = new SqlCommand("DELETE FROM People WHERE Name = @name", con);
 

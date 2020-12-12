@@ -25,7 +25,12 @@ namespace Final_Project_NET
         {
             InitializeComponent();
             //lvDataBinding.ItemSource = the new contacts we want to add to the window.
-            
+            List<Contact> contacts = new List<Contact>();
+            for (int i = 0; i < ContactManager.ReadContacts().Count; i++)
+            {
+                contacts.Add(ContactManager.ReadContacts()[i]);
+            }
+            ContactList.ItemsSource = contacts;
         }
 
         private void btnAddContact_Click(object sender, RoutedEventArgs e)
