@@ -24,32 +24,30 @@ namespace Final_Project_NET
         public MainWindow()
         {
             InitializeComponent();
-
+            //lvDataBinding.ItemSource = the new contacts we want to add to the window.
             
         }
 
-        private void btnShowSelectedItem_Click(object sender, RoutedEventArgs e)
+        private void btnAddContact_Click(object sender, RoutedEventArgs e)
         {
-            //new window input values
-            //store values and call method of contactManager to update listbox and DataBase
-
-            //re update
-        }
-        private void btnSelectLast_Click(object sender, RoutedEventArgs e)
-        {
-            //create the message box
+            AddWindow aw = new AddWindow();
+            aw.ShowDialog();
         }
 
-        private void btnSelectNext_Click(object sender, RoutedEventArgs e)
+        private void btnShowContact_Click(object sender, RoutedEventArgs e)
         {
-
+            
         }
 
-        private void btnSelectCSharp_Click(object sender, RoutedEventArgs e)
+        private void btnEditContact_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
+        private void btnDeleteContact_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
 

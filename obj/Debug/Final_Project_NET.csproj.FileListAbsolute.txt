@@ -1,0 +1,17 @@
+D:\GITREPOS\Final_Project_NET\Final_Project_NET\obj\Debug\Final_Project_NET.csprojAssemblyReference.cache
+D:\GITREPOS\Final_Project_NET\Final_Project_NET\obj\Debug\AddWindow.g.cs
+D:\GITREPOS\Final_Project_NET\Final_Project_NET\obj\Debug\MainWindow.g.cs
+D:\GITREPOS\Final_Project_NET\Final_Project_NET\obj\Debug\App.g.cs
+D:\GITREPOS\Final_Project_NET\Final_Project_NET\obj\Debug\Final_Project_NET_MarkupCompile.cache
+D:\GITREPOS\Final_Project_NET\Final_Project_NET\obj\Debug\Final_Project_NET_MarkupCompile.lref
+D:\GITREPOS\Final_Project_NET\Final_Project_NET\bin\Debug\Final_Project_NET.exe.config
+D:\GITREPOS\Final_Project_NET\Final_Project_NET\bin\Debug\Final_Project_NET.exe
+D:\GITREPOS\Final_Project_NET\Final_Project_NET\bin\Debug\Final_Project_NET.pdb
+D:\GITREPOS\Final_Project_NET\Final_Project_NET\obj\Debug\AddWindow.baml
+D:\GITREPOS\Final_Project_NET\Final_Project_NET\obj\Debug\MainWindow.baml
+D:\GITREPOS\Final_Project_NET\Final_Project_NET\obj\Debug\Final_Project_NET.g.resources
+D:\GITREPOS\Final_Project_NET\Final_Project_NET\obj\Debug\Final_Project_NET.Properties.Resources.resources
+D:\GITREPOS\Final_Project_NET\Final_Project_NET\obj\Debug\Final_Project_NET.csproj.GenerateResource.cache
+D:\GITREPOS\Final_Project_NET\Final_Project_NET\obj\Debug\Final_Project_NET.csproj.CoreCompileInputs.cache
+D:\GITREPOS\Final_Project_NET\Final_Project_NET\obj\Debug\Final_Project_NET.exe
+D:\GITREPOS\Final_Project_NET\Final_Project_NET\obj\Debug\Final_Project_NET.pdb

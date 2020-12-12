@@ -8,23 +8,23 @@ namespace Final_Project_NET
 {
     class Contact
     {
-        public int Age { get; set; }
         public string Name { get; set; }
+        public int Age { get; set; }
         public string phoneNumber { get; set; }
 
 
-        public Contact(int age, string name, string phoneN)
+        public Contact(string name, int age, string phoneN)
         {
-            this.Age = age;
             this.Name = name;
+            this.Age = age;
             this.phoneNumber = phoneN;
         }
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append(this.Age);
-            sb.Append(" ");
             sb.Append(this.Name);
+            sb.Append(" ");
+            sb.Append(this.Age);
             sb.Append(" ");
             sb.Append(this.phoneNumber);
             sb.Append(" ");

@@ -33,6 +33,68 @@ namespace Final_Project_NET
         }
 
 
+
+        public List<Contact> ReadContacts(Contact contact)
+        {
+            List<Contact> contacts = new List<Contact>();
+            using (var con = new SqlConnection((@"data=localhost\SQLEXPRESS;database=Sales;Trusted_Connection=True")))
+            {
+                using (var cm = new SqlCommand("Select * from Contacts", con))
+                {
+                    con.Open();
+
+                    using (var sdr = cm.ExecuteReader())
+                    {
+                        while (sdr.HasRows)
+                        {
+                            object Name = sdr["Name"];
+                            object Age = sdr["Age"];
+                            object Number = sdr["Number"];
+
+                            contacts.Add(new Contact((String)Name, (int)Age, (string)Number));
+                        }
+                    }
+                }
+            }
+            return contacts;
+        }
+
+
+
+        public List<Contact> UpdateContacts(Contact contact)
+        {
+
+
+
+            return null;
+        }
+
+        public void deleteContact(string name)
+        {
+            var con = new SqlConnection(@"data source=localhost\SQLEXPRESS;database = CONTACTS;Trusted_Connection=True");
+
+            SqlCommand cm = new SqlCommand("DELETE FROM People WHERE Name = @name", con);
+
+            cm.Parameters.AddWithValue("@name", name);
+
+            con.Open();
+            int i = cm.ExecuteNonQuery();
+
+            if (i != 0)
+            {
+                Console.WriteLine("Contact deleted successfully");
+            }
+            else
+            {
+                Console.WriteLine("Error deleting contact");
+            }
+            con.Close();
+        }
+
+
+
+        
+
     }
 }
-}
+

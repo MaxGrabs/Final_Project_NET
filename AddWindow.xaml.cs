@@ -19,9 +19,25 @@ namespace Final_Project_NET
     /// </summary>
     public partial class AddWindow : Window
     {
+        String Name;
+        String Age;
+        String PhoneNumber;
         public AddWindow()
         {
             InitializeComponent();
         }
+        private void AddBinding_Click(object sender, RoutedEventArgs e)
+        {
+            Name = addName.Text;
+            Age = addAge.Text;
+            PhoneNumber = addPhoneNumber.Text;
+        }
+
+        private void CancelBinding_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        //TEXT BOXES
+        
     }
 }
