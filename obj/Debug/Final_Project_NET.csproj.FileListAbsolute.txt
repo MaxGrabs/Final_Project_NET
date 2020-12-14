@@ -15,5 +15,7 @@ D:\GITREPOS\Final_Project_NET\Final_Project_NET\obj\Debug\Final_Project_NET.cspr
 D:\GITREPOS\Final_Project_NET\Final_Project_NET\obj\Debug\Final_Project_NET.csproj.CoreCompileInputs.cache
 D:\GITREPOS\Final_Project_NET\Final_Project_NET\obj\Debug\Final_Project_NET.exe
 D:\GITREPOS\Final_Project_NET\Final_Project_NET\obj\Debug\Final_Project_NET.pdb
-D:\GITREPOS\Final_Project_NET\Final_Project_NET\obj\Debug\edit.g.cs
-D:\GITREPOS\Final_Project_NET\Final_Project_NET\obj\Debug\edit.baml
+D:\GITREPOS\Final_Project_NET\Final_Project_NET\obj\Debug\editWindow.g.cs
+D:\GITREPOS\Final_Project_NET\Final_Project_NET\obj\Debug\ViewWindow.g.cs
+D:\GITREPOS\Final_Project_NET\Final_Project_NET\obj\Debug\EditWindow.baml
+D:\GITREPOS\Final_Project_NET\Final_Project_NET\obj\Debug\ViewWindow.baml

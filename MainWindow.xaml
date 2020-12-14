@@ -32,6 +32,8 @@
             <Button x:Name="btnShowContact" Click="btnShowContact_Click" Content="View"/>
             <Button x:Name="btnEditContact" Click="btnEditContact_Click" Content="Edit"/>
             <Button x:Name="btnDeleteContact" Click="btnDeleteContact_Click" Content="Delete"/>
+            <Button x:Name="btnSaveContact" Click="btnSaveContact_Click" Content="Save"/>
+            <Button x:Name="btnLoadContact" Click="btnLoadContact_Click" Content="Load"/>
         </StackPanel>
         <!--SelectionChanged="ContactList_SelectionChanged"-->
         <ListBox x:Name="ContactList" HorizontalAlignment="Stretch" SelectionMode="Single" >

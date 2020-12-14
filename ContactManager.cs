@@ -32,7 +32,25 @@ namespace Final_Project_NET
             con.Close();
         }
 
+        public static String[] viewContact(string name)
+        {
+            var con = new SqlConnection(@"data source=localhost\SQLEXPRESS;database = Contacts;Trusted_Connection=True");
 
+            SqlCommand cm = new SqlCommand("Select Name, Age, Number from Contacts WHERE Name = @name", con);
+
+            cm.Parameters.AddWithValue("@name", name);
+
+            con.Open();
+            var sdr = cm.ExecuteReader();
+                sdr.Read();
+                string details = ("" + sdr["Name"]);
+                string details2 = ("" + sdr["Age"]);
+                string details3 = ("" + sdr["Number"]);
+                string[] detailArr = { details, details2, details3 };
+            sdr.Close();
+            con.Close();
+            return detailArr;
+        }
 
         static public List<Contact> ReadContacts()
         {
@@ -61,20 +79,28 @@ namespace Final_Project_NET
         }
 
 
-
-        public List<Contact> UpdateContacts(Contact contact)
+        public static void updateContact(string oldname, string name, int age, string number)
         {
 
+            var con = new SqlConnection(@"data source=localhost\SQLEXPRESS;database = Contacts;Trusted_Connection=True");
+            SqlCommand cm = new SqlCommand("UPDATE Contacts SET Name = @name, Age = @age, " +
+                   "number = @num WHERE Name= @old", con);
+            cm.Parameters.AddWithValue("@old", oldname);
+            cm.Parameters.AddWithValue("@name", name);
+            cm.Parameters.AddWithValue("@age", age);
+            cm.Parameters.AddWithValue("@num", number);
 
+            con.Open();
+            cm.ExecuteNonQuery();
 
-            return null;
+            con.Close();
         }
 
-        public void deleteContact(string name)
+        public static void deleteContact(string name)
         {
             var con = new SqlConnection(@"data source=localhost\SQLEXPRESS;database = Contacts;Trusted_Connection=True");
 
-            SqlCommand cm = new SqlCommand("DELETE FROM People WHERE Name = @name", con);
+            SqlCommand cm = new SqlCommand("DELETE FROM Contacts WHERE Name = @name", con);
 
             cm.Parameters.AddWithValue("@name", name);
 
@@ -91,11 +117,7 @@ namespace Final_Project_NET
             }
             con.Close();
         }
-
-
-
-        
-
+       
     }
 }
 

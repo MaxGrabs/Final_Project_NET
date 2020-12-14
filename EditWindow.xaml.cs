@@ -14,28 +14,30 @@ using System.Windows.Shapes;
 
 namespace Final_Project_NET
 {
-    /// <summary>
-    /// Interaction logic for AddWindow.xaml
-    /// </summary>
-    public partial class AddWindow : Window
+
+    public partial class EditWindow : Window
     {
-        
-        public AddWindow()
+        Contact contact;
+        public EditWindow(Contact contact)
         {
             InitializeComponent();
+            this.contact = contact;
+            addName.Text = ContactManager.viewContact(contact.Name)[0];
+            addAge.Text = ContactManager.viewContact(contact.Name)[1];
+            addPhoneNumber.Text = ContactManager.viewContact(contact.Name)[2];
         }
-        private void AddBinding_Click(object sender, RoutedEventArgs e)
+
+        private void EditBinding_Click(object sender, RoutedEventArgs e)
         {
+            String oldName;
             String Name;
             int age;
             String PhoneNumber;
-            
-
+            oldName = contact.Name;
             Name = addName.Text;
             PhoneNumber = addPhoneNumber.Text;
             age = int.Parse(addAge.Text);
-            ContactManager.newContact(Name, age, PhoneNumber);
-
+            ContactManager.updateContact(oldName, Name, age, PhoneNumber);
 
             this.Close();
         }
@@ -44,7 +46,5 @@ namespace Final_Project_NET
         {
             this.Close();
         }
-        //TEXT BOXES
-        
     }
 }
