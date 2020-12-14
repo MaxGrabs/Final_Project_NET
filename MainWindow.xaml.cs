@@ -75,12 +75,7 @@ namespace Final_Project_NET
                 ew.ShowDialog();
             if (ew.IsLoaded)
             {
-                List<Contact> contacts = new List<Contact>();
-                for (int i = 0; i < ContactManager.ReadContacts().Count; i++)
-                {
-                    contacts.Add(ContactManager.ReadContacts()[i]);
-                }
-                ContactList.ItemsSource = contacts;
+                    refresh(ContactList);
             }
             }
         }
@@ -91,12 +86,7 @@ namespace Final_Project_NET
             if(selectContact != null)
             {
                 ContactManager.deleteContact(selectContact.Name);
-                List<Contact> contacts = new List<Contact>();
-                for (int i = 0; i < ContactManager.ReadContacts().Count; i++)
-                {
-                    contacts.Add(ContactManager.ReadContacts()[i]);
-                }
-                ContactList.ItemsSource = contacts;
+                refresh(ContactList);
             }
         }
 
@@ -127,7 +117,7 @@ namespace Final_Project_NET
         private void btnLoadContact_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
-          //  openFileDialog.Filter = "CSV(*.csv)|*csv";
+            openFileDialog.Filter = "CSV(*.csv)|*.csv";
             if (openFileDialog.ShowDialog() == true)
             {
 
@@ -145,13 +135,19 @@ namespace Final_Project_NET
                     string[] words = line.Split(',');
                     ContactManager.newContact(words[0], int.Parse(words[1]), words[2]);
                 }
-                List<Contact> contacts = new List<Contact>();
-                for (int i = 0; i < ContactManager.ReadContacts().Count; i++)
-                {
-                    contacts.Add(ContactManager.ReadContacts()[i]);
-                }
-                ContactList.ItemsSource = contacts;
+                refresh(ContactList);
             }
+
+        }
+        //bonus method for clean code 
+        public static void refresh(ListBox lb)
+        {
+            List<Contact> contacts = new List<Contact>();
+            for (int i = 0; i < ContactManager.ReadContacts().Count; i++)
+            {
+                contacts.Add(ContactManager.ReadContacts()[i]);
+            }
+            lb.ItemsSource = contacts;
         }
     }
 }

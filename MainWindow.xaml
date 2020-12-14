@@ -26,26 +26,83 @@
                 <Style TargetType="Button">
                     <Setter Property="Margin" Value="0,0,0,5"/>
                 </Style>
-                  </StackPanel.Resources>
+            </StackPanel.Resources>
             <TextBlock FontWeight="Bold" Margin="0,0,0,10"><Run Text="ListBox Selection"/></TextBlock>
-            <Button x:Name="btnAddContact" Click="btnAddContact_Click" Content="Add"/>
-            <Button x:Name="btnShowContact" Click="btnShowContact_Click" Content="View"/>
-            <Button x:Name="btnEditContact" Click="btnEditContact_Click" Content="Edit"/>
-            <Button x:Name="btnDeleteContact" Click="btnDeleteContact_Click" Content="Delete"/>
-            <Button x:Name="btnSaveContact" Click="btnSaveContact_Click" Content="Save"/>
-            <Button x:Name="btnLoadContact" Click="btnLoadContact_Click" Content="Load"/>
+            <Button x:Name="btnAddContact" Click="btnAddContact_Click" Content="Add" Width="28" Height="22">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleY="1.296" ScaleX="3.858"/>
+                        <SkewTransform AngleX="-67.267323254944557"/>
+                        <RotateTransform Angle="-8.377"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+            <Button x:Name="btnShowContact" Click="btnShowContact_Click" Content="View" Width="30">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleY="1.296" ScaleX="3.858"/>
+                        <SkewTransform AngleX="-67.267323254944557"/>
+                        <RotateTransform Angle="-5.736"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+            <Button x:Name="btnEditContact" Click="btnEditContact_Click" Content="Edit" Height="19" Width="25">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleY="1.296" ScaleX="3.858"/>
+                        <SkewTransform AngleX="-67.267323254944557"/>
+                        <RotateTransform Angle="-5.813"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+            <Button x:Name="btnDeleteContact" Click="btnDeleteContact_Click" Content="Delete" Height="33" Width="38">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleY="1.296" ScaleX="3.858"/>
+                        <SkewTransform AngleX="-67.267323254944557"/>
+                        <RotateTransform Angle="-4.564"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+            <Button x:Name="btnSaveContact" Click="btnSaveContact_Click" Content="Save" Width="38">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleY="1.296" ScaleX="3.858"/>
+                        <SkewTransform AngleX="-67.267323254944557"/>
+                        <RotateTransform Angle="-5.004"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+            <Button x:Name="btnLoadContact" Click="btnLoadContact_Click" Content="Load" Width="40" Height="29">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleY="1.296" ScaleX="3.858"/>
+                        <SkewTransform AngleX="-67.267323254944557"/>
+                        <RotateTransform Angle="-4.21"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
         </StackPanel>
         <!--SelectionChanged="ContactList_SelectionChanged"-->
         <ListBox x:Name="ContactList" HorizontalAlignment="Stretch" SelectionMode="Single" >
+            
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <WrapPanel>
-                        <TextBlock Text="{Binding Name}" FontWeight="Bold"/>
+
+                        <TextBlock Text="{Binding Name}" FontWeight="Bold" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto" />
                     </WrapPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
             
         </ListBox>
+        
     </DockPanel>
     <!--<WrapPanel>
         <ListBox Name ="listbox"  Margin="10,0,10,20" Width="643" Height="417">

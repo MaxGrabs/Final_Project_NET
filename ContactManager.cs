@@ -116,8 +116,7 @@ namespace Final_Project_NET
                 Console.WriteLine("Error deleting contact");
             }
             con.Close();
-        }
-       
+        }      
     }
 }
 
