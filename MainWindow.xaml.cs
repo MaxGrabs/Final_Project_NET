@@ -44,12 +44,7 @@ namespace Final_Project_NET
             aw.ShowDialog();
             if (aw.IsLoaded)
             {
-                List<Contact> contacts = new List<Contact>();
-                for (int i = 0; i < ContactManager.ReadContacts().Count; i++)
-                {
-                    contacts.Add(ContactManager.ReadContacts()[i]);
-                }
-                ContactList.ItemsSource = contacts;
+                refresh(ContactList);
             }
         }
 
