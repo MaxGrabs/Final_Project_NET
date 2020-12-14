@@ -23,12 +23,7 @@ namespace Final_Project_NET
             con.Open(); 
             int i = cm.ExecuteNonQuery();
 
-            if (i != 0)
-            {
-                Console.WriteLine("Contact created successfully");
-            }
-            else
-            { Console.WriteLine("Error creating contact"); }
+           
             con.Close();
         }
 
@@ -107,14 +102,6 @@ namespace Final_Project_NET
             con.Open();
             int i = cm.ExecuteNonQuery();
 
-            if (i != 0)
-            {
-                Console.WriteLine("Contact deleted successfully");
-            }
-            else
-            {
-                Console.WriteLine("Error deleting contact");
-            }
             con.Close();
         }      
     }

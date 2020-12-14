@@ -6,20 +6,7 @@
         xmlns:local="clr-namespace:Final_Project_NET"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <!--<ListView Margin ="10" Name="lvDataBinding">
-        <ListView.ItemTemplate>
-            <DataTemplate>
-                <WrapPanel>
-                    <TextBlock Text="Name:"/>
-                    <TextBlock Text="{Binding Name}" FontWeight="Bold"/>
-                    <TextBlock Text="Age:"/>
-                    <TextBlock Text="{Binding Age}" FontWeight="Bold"/>
-                    <TextBlock Text="Phone Number:"/>
-                    <TextBlock Text="{Binding phoneNumber}" FontWeight="Bold"/>
-                </WrapPanel>
-            </DataTemplate>
-        </ListView.ItemTemplate>
-    </ListView>-->
+
     <DockPanel Margin="10">
         <StackPanel DockPanel.Dock="Right" Margin="10, 0">
             <StackPanel.Resources>
@@ -89,7 +76,7 @@
                 </Button.RenderTransform>
             </Button>
         </StackPanel>
-        <!--SelectionChanged="ContactList_SelectionChanged"-->
+
         <ListBox x:Name="ContactList" HorizontalAlignment="Stretch" SelectionMode="Single" >
             
             <ListBox.ItemTemplate>
@@ -104,21 +91,5 @@
         </ListBox>
         
     </DockPanel>
-    <!--<WrapPanel>
-        <ListBox Name ="listbox"  Margin="10,0,10,20" Width="643" Height="417">
-            
-        </ListBox>
-        <StackPanel Margin="10, 0" Width="108" Height="160">
-            <StackPanel.Resources>
-                <Style TargetType="{x:Type Button}">
-                    <Setter Property="Margin" Value="0,0,0,5"/>
-                </Style>
-            </StackPanel.Resources>
-            <TextBlock FontWeight="Bold" Margin="0,0,0,10"><Run Text="ListBox Selection"/></TextBlock>
-            <Button x:Name="btnShowSelectedItem" Click="btnShowSelectedItem_Click" Content="Add"/>
-            <Button x:Name="btnSelectLast" Click="btnSelectLast_Click" Content="View"/>
-            <Button x:Name="btnSelectNext" Click="btnSelectNext_Click" Content="Edit"/>
-            <Button x:Name="btnSelectCSharp" Click="btnSelectCSharp_Click" Content="Delete"/>
-        </StackPanel>
-    </WrapPanel>-->
+
 </Window>

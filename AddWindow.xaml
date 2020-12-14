@@ -6,33 +6,7 @@
         xmlns:local="clr-namespace:Final_Project_NET"
         mc:Ignorable="d"
         Title="AddWindow" Height="275" Width="490">
-    <!--<Grid Margin="0,0,0,3">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="0*"/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        <ListView Margin ="294,96,222,246" Name="AddBinding" SelectionChanged="AddBinding_SelectionChanged" Grid.ColumnSpan="2">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <WrapPanel>
-                        <TextBlock Text="Name:"/>
-                        <TextBlock Text="{Binding Name}" FontWeight="Bold"/>
-                        <TextBlock Text="Age:"/>
-                        <TextBlock Text="{Binding Age}" FontWeight="Bold"/>
-                        <TextBlock Text="Phone Number:"/>
-                        <TextBlock Text="{Binding phoneNumber}" FontWeight="Bold"/>
-
-                    </WrapPanel>
-
-                </DataTemplate>
-            </ListView.ItemTemplate>
-
-        </ListView>
-
-        <Button Content="Add" Name="Add" Grid.ColumnSpan="2" Margin="156,572,688,166"/>
-        <Button Content="Cancel" Name="Cancel" Grid.ColumnSpan="2" Margin="256,572,588,166"/>
-
-    </Grid>-->
+    
     <DockPanel Margin="10">
         <StackPanel DockPanel.Dock="Right" Margin="10, 0">
             <StackPanel.Resources>
@@ -44,7 +18,7 @@
             <Button x:Name="btnSubmit" Click="AddBinding_Click" Content="Add"/>
             <Button x:Name="btnCancel" Click="CancelBinding_Click" Content="Cancel"/>
         </StackPanel>
-        <!--SelectionChanged="ContactList_SelectionChanged"-->
+
         <StackPanel>
             <Label Content="Name:" Margin="5"/>
             <TextBox x:Name ="addName" Height="30" Width="360" />

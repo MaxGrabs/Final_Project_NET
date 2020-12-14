@@ -17,7 +17,7 @@
             <Button x:Name="btnSubmit" Click="EditBinding_Click" Content="Confirm"/>
             <Button x:Name="btnCancel" Click="CancelBinding_Click" Content="Cancel"/>
         </StackPanel>
-        <!--SelectionChanged="ContactList_SelectionChanged"-->
+
         <StackPanel>
             <Label Content="Name:" Margin="5"/>
             <TextBox x:Name ="addName" Height="30" Width="330" Text=""/>
