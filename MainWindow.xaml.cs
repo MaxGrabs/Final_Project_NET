@@ -103,10 +103,21 @@ namespace Final_Project_NET
         private void btnSaveContact_Click(object sender, RoutedEventArgs e)
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Filter = "CSV(*.csv)";
-            if(saveFileDialog.ShowDialog()== true)
+            saveFileDialog.Filter = "CSV(*.csv)|*.csv";
+            List<Contact> contacts = new List<Contact>();
+            for (int i = 0; i < ContactManager.ReadContacts().Count; i++)
             {
-           //     File.WriteAllText(saveFileDialog.FileName, ); 
+                contacts.Add(ContactManager.ReadContacts()[i]);
+            }
+            string[] arr = new string[contacts.Count];
+            for(int i=0; i<contacts.Count; i++)
+            {
+                arr[i] = contacts[i].Name + "," + contacts[i].Age + "," + contacts[i].phoneNumber;
+            }
+            
+            if (saveFileDialog.ShowDialog()== true)
+            {
+                    File.WriteAllLines(saveFileDialog.FileName, arr); 
             }
 
 
@@ -119,20 +130,27 @@ namespace Final_Project_NET
           //  openFileDialog.Filter = "CSV(*.csv)|*csv";
             if (openFileDialog.ShowDialog() == true)
             {
-               // var mypoop = File.ReadAllText(openFileDialog.FileName);
-                var lines = File.ReadLines(openFileDialog.FileName);
 
-                
-                for (int i = 0; i < ContactManager.ReadContacts().Count; i++)
+                int count = ContactManager.ReadContacts().Count;
+                for (int i = 0; i < count; i++)
                 {
-                    ContactManager.deleteContact();
+                    Contact contacting = new Contact(ContactManager.ReadContacts()[0].Name, ContactManager.ReadContacts()[0].Age, ContactManager.ReadContacts()[0].phoneNumber);
+                    ContactManager.deleteContact(contacting.Name);
                 }
+
+                var lines = File.ReadLines(openFileDialog.FileName);
 
                 foreach (string line in lines)
                 {
                     string[] words = line.Split(',');
                     ContactManager.newContact(words[0], int.Parse(words[1]), words[2]);
                 }
+                List<Contact> contacts = new List<Contact>();
+                for (int i = 0; i < ContactManager.ReadContacts().Count; i++)
+                {
+                    contacts.Add(ContactManager.ReadContacts()[i]);
+                }
+                ContactList.ItemsSource = contacts;
             }
         }
     }
